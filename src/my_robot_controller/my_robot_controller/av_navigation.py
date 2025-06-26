@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+#  -----  This is for the Task  3 ---- 
 import rclpy
 from rclpy.node import Node 
 from geometry_msgs.msg import PoseStamped, PoseWithCovarianceStamped 
@@ -29,21 +30,23 @@ class CarNavigationNode(Node):
         self.setup_initial_pose() 
         self.setup_goals() 
         
+
+
     def setup_initial_pose(self): 
         initial_pose = PoseWithCovarianceStamped() 
         initial_pose.header.frame_id = 'map' 
-        initial_pose.pose.pose.position.x = 3888.959 
-        initial_pose.pose.pose.position.y = 73811.71 
-        initial_pose.pose.pose.orientation.z = 0.85 
-        initial_pose.pose.pose.orientation.w = 0.50 
+        initial_pose.pose.pose.position.x = 3750.61 
+        initial_pose.pose.pose.position.y = 73688.26
+        initial_pose.pose.pose.orientation.z = 0.25 
+        initial_pose.pose.pose.orientation.w = 0.967
         time.sleep(10)
         self.initial_pose_publisher.publish(initial_pose) 
         
     def setup_goals(self): 
         self.goal_poses = [ 
-        {'x': 3889.76, 'y': 73757.77, 'xx': 0.0, 'yy': 0.0, 'zz': -0.96, 'w': 0.24}, 
-        {'x': 3809.31, 'y': 73765.72, 'xx': 0.0, 'yy': 0.0, 'zz': -0.96, 'w': 0.26},
-        {'x': 3696.58, 'y': 73732.67, 'xx': 0.0, 'yy': 0.0, 'zz': -0.49, 'w': 0.86} 
+        {'x': 3770.58, 'y': 73730.31, 'xx': 0.0, 'yy': 0.0, 'zz': 0.85, 'w': 0.51}, 
+        {'x': 3817.57, 'y': 73773.38, 'xx': 0.0, 'yy': 0.0, 'zz': 0.23, 'w': 0.97},
+        {'x': 3902.01, 'y': 73767.58, 'xx': 0.0, 'yy': 0.0, 'zz': 0.24, 'w': 0.97} 
         ]
         time.sleep(5) 
         self.publish_goal() 

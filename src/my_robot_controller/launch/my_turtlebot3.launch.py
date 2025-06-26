@@ -15,6 +15,8 @@
 # limitations under the License.
 #
 # Authors: Joep Tool
+## This is for the first and the second task that runs the robot.
+
 
 import os
 
